@@ -9,7 +9,6 @@ async function authUser(req, res, next) {
       res,
       new Error("Token de autentificação não fornecido")
     );
-
     try {
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
       req.usuarioJwt = decoded;
